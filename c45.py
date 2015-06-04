@@ -124,7 +124,7 @@ def buildTree(trainData,category,parent,attributesName,format):
                                 rightChildTrainData[j].append(trainData[j][i])
                             #add tranCategory
                             rightChildCategory.append(category[i])
-                if len(leftChildCategory) > 2 and len(rightChildCategory) > 2:
+                if len(leftChildCategory) > 3 and len(rightChildCategory) > 3:
                     p_l = float(len(leftChildCategory)) / (len(trainData[indexSelected]) - trainData[indexSelected].count("?"))
                     children = ElementTree.SubElement(parent,nameSelected,{'value':str(divPoint),"flag":"right","p":str(round(1-p_l,3))})
                     buildTree(rightChildTrainData, rightChildCategory, children, attributesName,format)
